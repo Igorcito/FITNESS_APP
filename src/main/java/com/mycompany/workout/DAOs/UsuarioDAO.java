@@ -87,16 +87,16 @@ public class UsuarioDAO {
         sentencia.setInt(2, id);
         sentencia.executeUpdate();
     }
-
-    //--------------------------------------------------------------------------
-    public void desconectar() throws SQLException {
-        conexion.close();
-    }
-
+    
     public void borrarUsuario(int id) throws SQLException {
         String sql = "DELETE FROM WORKOUT.USUARIO WHERE ID_USUARIO = ?";
         PreparedStatement sentencia = conexion.prepareStatement(sql);
         sentencia.setInt(1, id);
         sentencia.executeUpdate();
     }
+    
+    public void desconectar() throws SQLException {
+        conexion.close();
+    }
+
 }

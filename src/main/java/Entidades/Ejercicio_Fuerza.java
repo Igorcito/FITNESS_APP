@@ -38,8 +38,4 @@ public class Ejercicio_Fuerza extends Ejercicio {
         return super.toString() + "     Peso: " + this.getPeso() + " KG." + "\n";
     } 
     
-//    public String toString2() {
-//        return super.toString() + "     Peso: " + this.getPeso() + " KG." + ;
-//    } 
-    
 }
