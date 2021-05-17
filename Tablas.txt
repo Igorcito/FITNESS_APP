@@ -1,0 +1,11 @@
+[ID: 1     Nombre: Press_Pectoral     Tipo: Fuerza     Zona: Pecho     Peso: 30 KG.
+, ID: 2     Nombre: Remo_Máquina     Tipo: Fuerza     Zona: Espalda     Peso: 25 KG.
+, ID: 3     Nombre: Prensa_Horizontal     Tipo: Fuerza     Zona: Piernas     Peso: 75 KG.
+, ID: 4     Nombre: Jalón_Máquina     Tipo: Fuerza     Zona: Espalda     Peso: 60 KG.
+, ID: 5     Nombre: Extensión_Espalda     Tipo: Fuerza     Zona: Cadera     Peso: 10 KG.
+, ID: 6     Nombre: Press_Hombro_Máquina     Tipo: Fuerza     Zona: Hombros     Peso: 20 KG.
+, ID: 7     Nombre: Crunch_Máquina     Tipo: Fuerza     Zona: Abdomen     Peso: 35 KG.
+, ID: 8     Nombre: Press_Banca     Tipo: Fuerza     Zona: Pecho     Peso: 30 KG.
+, ID: 9     Nombre: Curl_Biceps     Tipo: Fuerza     Zona: Brazos     Peso: 30 KG.
+, ID: 10     Nombre: Curl_Triceps     Tipo: Fuerza     Zona: Brazos     Peso: 30 KG.
+]

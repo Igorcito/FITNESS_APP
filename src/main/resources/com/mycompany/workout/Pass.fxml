@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: #343434;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.workout.PassController">
+   <children>
+      <AnchorPane layoutX="85.0" layoutY="70.0" prefHeight="103.0" prefWidth="854.0" style="-fx-background-color: #FFC300;">
+         <children>
+            <Text layoutX="237.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="32.0" layoutY="9.0" prefHeight="86.0" prefWidth="790.0" text="CAMBIO DE CONTRASEÑA:" textAlignment="CENTER" textFill="#515151">
+               <font>
+                  <Font name="System Bold" size="56.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button layoutX="380.0" layoutY="590.0" mnemonicParsing="false" onAction="#cambiarContrasenia" prefHeight="71.0" prefWidth="265.0" text="CAMBIAR CONTRASEÑA">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="User" layoutX="354.0" layoutY="304.0" prefHeight="44.0" prefWidth="317.0" />
+      <TextField fx:id="Newpass" layoutX="354.0" layoutY="454.0" prefHeight="44.0" prefWidth="317.0" />
+      <Label alignment="CENTER" layoutX="325.0" layoutY="257.0" lineSpacing="5.0" prefHeight="32.0" prefWidth="374.0" text="Introduce tu nombre de USUARIO :" textFill="#ffc300">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="341.0" layoutY="409.0" lineSpacing="5.0" prefHeight="32.0" prefWidth="344.0" text="Escribe tu nueva CONTRASEÑA :" textFill="#ffc300">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="845.0" layoutY="617.0" mnemonicParsing="false" onAction="#PassToSecondary" prefHeight="44.0" prefWidth="94.0" text="ATRÁS">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
