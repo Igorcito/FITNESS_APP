@@ -11,28 +11,50 @@ package Entidades;
  */
 public class Ejercicio_Flexibilidad extends Ejercicio{
     
-    //ATRIBUTOS:
+    /**
+     * ATRIBUTOS:
+     */
     private String intensidad;
     
-    //CONSTRUCTORES:------------------------------------------------------------
+    /**
+     * CONSTRUCTOR VACÍO:
+     */
     public Ejercicio_Flexibilidad () {}
     
+    /**
+     * CONSTRUCTOR CON PARÁMETROS:
+     * @param intensidad
+     * @param id_ejercicio
+     * @param nombre
+     * @param tipo
+     * @param zona 
+     */
     public Ejercicio_Flexibilidad (String intensidad, int id_ejercicio, String nombre, String tipo, String zona) {
         
         super (id_ejercicio, nombre, tipo, zona);
         this.intensidad = intensidad;
     }
-    
-    //GETTERS & SETTERS:--------------------------------------------------------
+
+    /**
+     * @return the intensidad
+     */
     public String getIntensidad() {
         return intensidad;
     }
 
+    /**
+     * @param intensidad the intensidad to set
+     */
     public void setIntensidad(String intensidad) {
         this.intensidad = intensidad;
     }
     
-    //MÉTODOS:------------------------------------------------------------------
+    
+    
+    /**
+     * MÉTODO TO STRING PARA VER LA INFORMACIÓN DEL OBJETO EN UNA LÍNEA.
+     * @return 
+     */
     @Override
     public String toString() {
         return super.toString() + "     Intensidad: " + this.getIntensidad() + "\n";

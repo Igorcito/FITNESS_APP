@@ -18,26 +18,45 @@ import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 
+/**
+ *
+ * @author IGOR
+ */
 public class SecondaryController {
-
-    //VARIABLES PARA LA OPCIÓN DE EXPORTAR:
+    
+    /**
+     * VARIABLES PARA LA OPCIÓN DE EXPORTAR:
+     */
     private boolean Fuerza = false;
     private boolean Resistencia = false;
     private boolean Flexibilidad = false;
 
     @FXML
     private ListView Ejercicios;
-
+    
+    /**
+     * MÉTODO PARA PASAR DE LA PANTALLA DE EJERCICIOS A LA PANTALLA DE INICIO.
+     * @throws IOException 
+     */
     @FXML
     private void cerrarSesion() throws IOException {
         App.loadPrimary();
     }
-
+    
+    /**
+     * MÉTODO PARA PASAR DE LA PANTALLA DE EJERCICIOS A LA PANTALLA DE CONTRASEÑA.
+     * @throws IOException 
+     */
     @FXML
     private void ircambiarpass() throws IOException {
         App.setRoot("Pass");
     }
 
+    /**
+     * MÉTODO QUE COGE DE LA BASE DE DATOS LOS EJERCICIOS DE TIPO FUERZA.
+     * @throws IOException
+     * @throws SQLException
+     */
     @FXML
     public void Fuerza() throws IOException, SQLException {
 
@@ -63,6 +82,11 @@ public class SecondaryController {
 
     }
 
+    /**
+     * MÉTODO QUE COGE DE LA BASE DE DATOS LOS EJERCICIOS DE TIPO RESISTENCIA.
+     * @throws IOException
+     * @throws SQLException
+     */
     @FXML
     public void Resistencia() throws IOException, SQLException {
 
@@ -88,6 +112,11 @@ public class SecondaryController {
 
     }
 
+    /**
+     * MÉTODO QUE COGE DE LA BASE DE DATOS LOS EJERCICIOS DE TIPO FLEXIBILIDAD.
+     * @throws IOException
+     * @throws SQLException
+     */
     @FXML
     public void Flexibilidad() throws IOException, SQLException {
 
@@ -113,6 +142,14 @@ public class SecondaryController {
 
     }
 
+    /**
+     * MÉTODO QUE SIRVE PARA DARSE DE BAJA EN LA APLICACIÓN. ESTO ELIMINARÁ AL
+     * USUARIO QUE ESTÉ LOGUEADO DE LA BASE DE DATOS Y LO DEVOLVERÁ A LA PANTALLA
+     * DE INICIO.
+     * @throws ClassNotFoundException
+     * @throws IOException
+     * @throws SQLException
+     */
     @FXML
     public void borrarUsuario() throws ClassNotFoundException, IOException, SQLException {
 
@@ -138,7 +175,10 @@ public class SecondaryController {
         }
     }
 
-    //**MÉTODO PARA EXPORTAR LOS EJERCICIOS DE 1 TIPO A UN FICHERO.
+    /**
+     * MÉTODO QUE SE UTILIZA PARA EXPORTAR LOS EJERCICIOS QUE APARECEN EN EL 
+     * LISTVIEW EN EL MOMENTO A UN ARCHIVO EXTERNO.
+     */
     @FXML
     public void exportarEjercicios() {
         FileWriter fichero = null;

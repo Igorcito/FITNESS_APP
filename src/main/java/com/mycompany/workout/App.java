@@ -26,9 +26,13 @@ public class App extends Application {
         return InfoUsuario;
     }
     
-    
+    /**
+     * MÉTODO QUE INICIA LA APLICACIÓN.
+     * @param stage
+     * @throws IOException
+     */
     @Override
-    public void start(Stage stage) throws IOException { //ESTE MÉTODO ES PARA QUE SE NOS MUESTRE LA IMAGEN EN EL LOGIN.
+    public void start(Stage stage) throws IOException { 
         String fxml = "primary";
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         PrimaryController Controller = new PrimaryController();
@@ -40,12 +44,11 @@ public class App extends Application {
         // Give the controller access to the main app.
         Controller.loadImage();
     }
-//    public void start(Stage stage) throws IOException {
-//        scene = new Scene(loadFXML("primary"), 640, 480);
-//        stage.setScene(scene);
-//        stage.show();
-//    }
-
+    
+    /**
+     * MÉTODO QUE CARGA LA PANTALLA DE INICIO.
+     * @throws IOException 
+     */
     static void loadPrimary () throws IOException {
         String fxml = "primary";
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
@@ -58,20 +61,39 @@ public class App extends Application {
         controller.loadImage();
         
     }
-    
+    /**
+     * MÉTODO PARA CARGAR UNA VENTANA.
+     * @param fxml
+     * @throws IOException 
+     */
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
-
+    
+    /**
+     * 
+     * @param fxml
+     * @return
+     * @throws IOException 
+     */
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         launch();
     }
     
+    /**
+     * METODO QUE INICIALIZA EL LISTVIEW PARA VER LOS EJERCICIOS EN PANTALLA.
+     * @throws IOException
+     * @throws SQLException 
+     */
     static void loadlistaejerciciosWindow() throws IOException, SQLException {
         String fxml = "secondary_1";
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));

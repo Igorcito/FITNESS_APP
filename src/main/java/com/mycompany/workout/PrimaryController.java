@@ -11,8 +11,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+/**
+ *
+ * @author IGOR
+ */
 public class PrimaryController {
-
+    
+    /**
+     * MÉTODO PARA PASAR DE LA PANTALLA DE UNICIO A LA PANTALLA DE EJERCICIOS.
+     * @throws IOException 
+     */
     @FXML
     private void switchToSecondary() throws IOException {
         App.setRoot("secondary_1");
@@ -24,20 +32,28 @@ public class PrimaryController {
     @FXML
     private Label errorLDatos;
 
+    /**
+     * MÉTODO PARA QUE APAREZCA LA IMAGEN EN LA PANTALLA DE INICIO.
+     */
     @FXML
     public void loadImage() {
         Image img = new Image(getClass().getResourceAsStream("/Images/Workout3.png"));
         imagenlogin.setImage(img);
     }
 
-    //Campos de relleno del REGISTRO:-------------------------------------------
+    
     @FXML
     private TextField rnombre;
     @FXML
     private PasswordField rpass;
     @FXML
     private TextField rdni;
-
+    
+    /**
+     * MÉTODO QUE REGISTRA AL USUARIO EN LA BASE DE DATOS CON LOS DATOS QUE HAÇ
+     * INTRODUCIDO.
+     * @throws SQLException 
+     */
     @FXML
     private void Registro() throws SQLException {
         UsuarioDAO Usuario = new UsuarioDAO();
@@ -85,13 +101,17 @@ public class PrimaryController {
             }
         }
     }
-
-    //Campos de relleno del LOGIN:---------------------------------------------
+    
     @FXML
     private TextField lnombre;
     @FXML
     private PasswordField lpass;
-
+    
+    /**
+     * CONECTAMOS CON LA BASE DE DATOS Y, SI EL USUSARIO ES CORRECTO, SE PRODUCE
+     * EL LOGIN Y SE ACCEDE A LA 2ª VENTANA DE LA APLICACIÓN.
+     * @throws SQLException 
+     */
     @FXML
     private void login() throws SQLException {
         UsuarioDAO Usuario = new UsuarioDAO();

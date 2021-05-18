@@ -23,8 +23,17 @@ import java.util.List;
  */
 public class EjercicioDAO {
     
+    /**
+     * ATRIBUTOS:
+     */
     private Connection conexion;
     
+    /**
+     * MÉTODO PARA CONECTAR CON LA BASE DE DATOS: "WORKOUT".
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     * @throws IOException 
+     */
     public void conectar() throws ClassNotFoundException, SQLException, IOException {
         String host = "localhost";
         String port = "3306";
@@ -37,9 +46,11 @@ public class EjercicioDAO {
         
     }
    
-    
-    // DIVIDIMOS EN 3 LISTVIEWS PARA MOSTRAR LOS EJERCICIOS:
-    
+    /**
+     * MÉTODO PARA MOSTRAR EN EL LISTVIEW SOLO LOS EJERCICIOS DE TIPO FUERZA.
+     * @return EJF
+     * @throws SQLException 
+     */
     public List<Ejercicio_Fuerza> listEF() throws SQLException {
         List<Ejercicio_Fuerza> EJF = new ArrayList<>();
         String sql = "SELECT * FROM workout.ejercicios WHERE Tipo = 'fuerza'";
@@ -49,7 +60,7 @@ public class EjercicioDAO {
         while (resultado.next()) {
                 
             Ejercicio_Fuerza EF = new Ejercicio_Fuerza();
-            EF.setId_Ejercicio(resultado.getInt(1));
+            EF.setId_ejercicio(resultado.getInt(1));
             EF.setNombre(resultado.getString(2));
             EF.setTipo(resultado.getString(3));
             EF.setZona(resultado.getString(4));
@@ -61,6 +72,11 @@ public class EjercicioDAO {
         return EJF;
     }
     
+    /**
+     * MÉTODO PARA MOSTRAR EN EL LISTVIEW SOLO LOS EJERCICIOS DE TIPO RESISTENCIA.
+     * @return EJR
+     * @throws SQLException 
+     */
     public List<Ejercicio_Resistencia> listER() throws SQLException {
         List<Ejercicio_Resistencia> EJR = new ArrayList<>();
         String sql = "SELECT * FROM workout.ejercicios WHERE Tipo = 'resistencia'";
@@ -70,7 +86,7 @@ public class EjercicioDAO {
         while (resultado.next()) {
                 
             Ejercicio_Resistencia ER = new Ejercicio_Resistencia();
-            ER.setId_Ejercicio(resultado.getInt(1));
+            ER.setId_ejercicio(resultado.getInt(1));
             ER.setNombre(resultado.getString(2));
             ER.setTipo(resultado.getString(3));
             ER.setZona(resultado.getString(4));
@@ -82,6 +98,11 @@ public class EjercicioDAO {
         return EJR;
     }
     
+    /**
+     * MÉTODO PARA MOSTRAR EN EL LISTVIEW SOLO LOS EJERCICIOS DE TIPO FLEXIBILIDAD.
+     * @return EJFL
+     * @throws SQLException 
+     */
     public List<Ejercicio_Flexibilidad> listEFL() throws SQLException {
         List<Ejercicio_Flexibilidad> EJFL = new ArrayList<>();
         String sql = "SELECT * FROM workout.ejercicios WHERE Tipo = 'flexibilidad'";
@@ -91,7 +112,7 @@ public class EjercicioDAO {
         while (resultado.next()) {
                 
             Ejercicio_Flexibilidad EFL = new Ejercicio_Flexibilidad();
-            EFL.setId_Ejercicio(resultado.getInt(1));
+            EFL.setId_ejercicio(resultado.getInt(1));
             EFL.setNombre(resultado.getString(2));
             EFL.setTipo(resultado.getString(3));
             EFL.setZona(resultado.getString(4));
@@ -103,9 +124,13 @@ public class EjercicioDAO {
         return EJFL;
     }
     
-   public void desconectar() throws SQLException
-   {
-            conexion.close();
-   }
+    /**
+     * MÉTODO PARA REALIZAR UNA DESCONEXIÓN.
+     * @throws SQLException 
+     */
+    public void desconectar() throws SQLException
+    {
+             conexion.close();
+    }
    
 }

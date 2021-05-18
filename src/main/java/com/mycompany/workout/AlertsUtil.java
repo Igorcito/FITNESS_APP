@@ -13,12 +13,20 @@ import javafx.scene.control.Alert;
  */
 public class AlertsUtil {
     
+    /**
+     * MÉTODO QUE NOS MUESTRA UN MENSAJE DE ERROR.
+     * @param mensaje
+     */
     public static void mostrarError(String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.ERROR);
         alerta.setContentText(mensaje);
         alerta.show();
     }
     
+    /**
+     * MÉTODO QUE NOS MUESTRA UN MENSAJE DE INFORMACIÓN.
+     * @param mensaje
+     */
     public static void mostrarInfo(String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setContentText(mensaje);

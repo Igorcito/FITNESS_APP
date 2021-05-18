@@ -23,7 +23,14 @@ public class PassController {
     private TextField User;
     @FXML
     private TextField Newpass;
-
+    
+    /**
+     * MÉTODO QUE CAMBIARÁ LA CONTRASEÑA DEL USUARIO CUANDO ESTE INTRODUZCA
+     * LOS DATOS DE USUARIO Y NUEVA CONTRASEÑA.
+     * @throws ClassNotFoundException
+     * @throws IOException
+     * @throws SQLException 
+     */
     @FXML
     private void cambiarContrasenia() throws ClassNotFoundException, IOException, SQLException {
         UsuarioDAO Usuario = new UsuarioDAO();
@@ -49,6 +56,11 @@ public class PassController {
 
     }
 
+    /**
+     * MÉTODO PARA PASAR DE LA PANTALLA DE CONTRASEÑA A LA PANTALLA DE EJERCICIOS.
+     * @throws IOException
+     * @throws SQLException 
+     */
     @FXML
     private void PassToSecondary() throws IOException, SQLException {
     App.setRoot("Secondary_1");

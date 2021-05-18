@@ -22,7 +22,12 @@ public class UsuarioDAO {
 
     private Connection conexion;
 
-    //PARA CONECTAR CON LA BASE DE DATOS: "WORKOUT"------------------------------
+    /**
+     * MÉTODO PARA CONECTAR CON LA BASE DE DATOS: "WORKOUT".
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     * @throws IOException 
+     */
     public void conectar() throws ClassNotFoundException, SQLException, IOException {
         String host = "localhost";
         String port = "3306";
@@ -34,7 +39,11 @@ public class UsuarioDAO {
                 + port + "/" + dbname + "?serverTimezone=UTC", username, password);
     }
 
-    //PARA REGISTRAR AL USUARIO (INSERT).---------------------------------------
+    /**
+     * MÉTODO PARA REGISTRAR AL USUARIO (INSERT).
+     * @param u
+     * @throws SQLException 
+     */
     public void InsertarUsuario(Usuario u) throws SQLException {
         String sql = "INSERT INTO Workout.usuario (nombre,pass,dni) VALUES(?,?,?)";
         PreparedStatement sentencia = conexion.prepareStatement(sql);
@@ -44,7 +53,12 @@ public class UsuarioDAO {
         sentencia.executeUpdate();
     }
 
-    //PARA LOGEAR AL USUARIO.---------------------------------------------------
+    /**
+     * MÉTODO PARA LOGEAR AL USUARIO (SELECT).
+     * @param nombre
+     * @return
+     * @throws SQLException 
+     */
     public Usuario cogerUsuarioPorNombre(String nombre) throws SQLException {
 
         String sql = "SELECT ID_USUARIO, NOMBRE, PASS FROM USUARIO WHERE NOMBRE=?";
@@ -63,7 +77,12 @@ public class UsuarioDAO {
         return user;
     }
 
-    //PARA CAMBIAR LA CONTRASEÑA:-----------------------------------------------
+    /**
+     * MÉTODO SABER SI EL USUARIO QUE SE INTRODUCE EXISTE EN LA BD.
+     * @param nombrecambiopass
+     * @return
+     * @throws SQLException 
+     */
     public boolean usuarioExistente(String nombrecambiopass) throws SQLException {
 
         String sql = "SELECT NOMBRE FROM USUARIO WHERE NOMBRE=?";
@@ -78,7 +97,13 @@ public class UsuarioDAO {
         }
         return nombreexistente;
     }
-
+    
+    /**
+     * MÉTODO PARA CAMBIAR LA CONTRASEÑA (UPDATE).
+     * @param id
+     * @param newpass
+     * @throws SQLException 
+     */
     public void UpdatePass(int id, String newpass) throws SQLException {
         
         String sql = "CALL spUpdatePass(?,?)";
@@ -88,6 +113,12 @@ public class UsuarioDAO {
         sentencia.executeUpdate();
     }
     
+    /**
+     * MÉTODO PARA QUE EL USUARIO SE DE DE BAJA. ESTO ELIMINARÁ AL
+     * USUARIO DE LA BASE DE DATOS (DELETE).
+     * @param id
+     * @throws SQLException 
+     */
     public void borrarUsuario(int id) throws SQLException {
         String sql = "DELETE FROM WORKOUT.USUARIO WHERE ID_USUARIO = ?";
         PreparedStatement sentencia = conexion.prepareStatement(sql);
@@ -95,6 +126,10 @@ public class UsuarioDAO {
         sentencia.executeUpdate();
     }
     
+    /**
+     * MÉTODO PARA REALIZAR UNA DESCONEXIÓN.
+     * @throws SQLException 
+     */
     public void desconectar() throws SQLException {
         conexion.close();
     }
