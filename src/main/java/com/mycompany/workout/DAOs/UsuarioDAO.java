@@ -7,12 +7,16 @@ package com.mycompany.workout.DAOs;
 //import java.sql.Connection;
 
 import Entidades.Usuario;
+import com.mycompany.workout.App;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Properties;
 
 /**
  *
@@ -28,17 +32,37 @@ public class UsuarioDAO {
      * @throws SQLException
      * @throws IOException 
      */
+//    public void conectar() throws ClassNotFoundException, SQLException, IOException {
+//        String host = "localhost";
+//        String port = "3306";
+//        String dbname = "workout";
+//        String username = "root";
+//        String password = "1234";
+//
+//        conexion = DriverManager.getConnection("jdbc:mariadb://" + host + ":"
+//                + port + "/" + dbname + "?serverTimezone=UTC", username, password);
+//    }
+    
+    /**
+     * MÉTODO PARA CONECTAR DESDE FICHERO CON LA BASE DE DATOS WORKOUT.
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     * @throws IOException 
+     */
     public void conectar() throws ClassNotFoundException, SQLException, IOException {
-        String host = "localhost";
-        String port = "3306";
-        String dbname = "workout";
-        String username = "root";
-        String password = "1234";
+        Properties configuration = new Properties();
+        configuration.load(new FileInputStream(new File(App.class.getResource("ConectionDB.properties").getPath())));
 
-        conexion = DriverManager.getConnection("jdbc:mariadb://" + host + ":"
-                + port + "/" + dbname + "?serverTimezone=UTC", username, password);
+        String host = configuration.getProperty("host");
+        String port = configuration.getProperty("port");
+        String dbname = configuration.getProperty("name");
+        String username = configuration.getProperty("username");
+        String password = configuration.getProperty("password");
+
+        conexion = DriverManager.getConnection("jdbc:mariadb://" + host + ":" + port + "/" + dbname + "?serverTimezone=UTC",
+                username, password);
     }
-
+    
     /**
      * MÉTODO PARA REGISTRAR AL USUARIO (INSERT).
      * @param u

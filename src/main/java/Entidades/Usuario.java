@@ -132,8 +132,6 @@ public class Usuario {
      *         que puede ser True o False.
      */
     public boolean NombreCorrecto(String nombre) {
-        //return nombre.length() >= 5; --- Es lo mismo el el if de abajo.
-
         boolean nombreok = false;
         if (nombre.length() >= 5) {
             nombreok = true;
