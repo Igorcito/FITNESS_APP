@@ -17,7 +17,7 @@ PROGRAMACIÓN - PROYECTO FINAL: FITNESS APP. (O ^ ~ ^ O)
 	1.	Interfaz gráfico con JavaFX. ✔️
 	2.	Uso de ficheros. ✔️
 	3.	Uso de interfaces con métodos para implementar por las clases usadas. ❌
-	4.	Uso de métodos abstractos, enumerados y expresiones regulares. ❌
+	4.	Uso de métodos abstractos❌, enumerados❌ y expresiones regulares✔️ --> (password.matches(".*[A-Z].*")) está en la clase "Usuario".
 	5.	Documentación de todas las clases y métodos usando javadoc. ✔️
 	6.	Inclusión de tests unitarios. ❌
 	7.	Incluir un listado de pruebas funcionales. ❌
