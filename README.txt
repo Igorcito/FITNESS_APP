@@ -1,5 +1,5 @@
-PROGRAMACIÓN - PROYECTO FINAL: FITNESS APP. (O ^ ~ ^ O)
-   -------------------------------------------------------
+  PROGRAMACIÓN - PROYECTO FINAL: FITNESS APP. (O ^ ~ ^ O)
+  -------------------------------------------------------
    
    REQUISITOS MÍNIMOS:
    
